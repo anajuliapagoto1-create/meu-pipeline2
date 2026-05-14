@@ -1,0 +1,27 @@
+name: Meu Pipeline
+on:
+  push:
+    branches:
+      - main  # O pipeline só ativa quando você envia para a branch principal
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest  # O GitHub vai usar um computador com Linux para rodar isso
+    steps:
+      - name: Baixar Projeto
+        uses: actions/checkout@v4  # Comando para o GitHub "copiar" seu código para a máquina virtual
+
+      - name: Simular Build
+        run: |
+          echo "Preparando sistema..."
+          sleep 5
+
+      - name: Simular Staging
+        run: |
+          echo "Testando ambiente..."
+          sleep 5
+
+      - name: Simular Deploy
+        run: |
+          echo "Sistema publicado!"
+          sleep 5
